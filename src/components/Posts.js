@@ -7,8 +7,10 @@ function Posts() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   //
+  const API_URL = "https://jsonplaceholder.typicode.com/posts";
+  //
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch(API_URL)
       .then((response) => response.json())
       .then((posts) => setPosts(posts))
       .catch((error) => setError(error.message))
